@@ -4,5 +4,5 @@
 <br>
 <i><b> Themes Available </b></i>
 <ul>
-  <li><a href = "github.com/nicoleang09/tumblr-themes/simply-basic">simply basic</a></li>
+  <li><a href = "https://raw.githubusercontent.com/nicoleang09/tumblr-themes/master/simply%20basic?token=AOM6KVOCHT2DKNZPFPA5VYC7F7FSC">simply basic</a></li>
 </ul>
