@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+
+<!-------------------------------------------------------------------
+
+SIMPLY BASIC BY RESOURCESTBH (2020)
+Thank you for using this theme!
+Please do not remove the credits or claim the theme as your own.
+Feel free to drop me a message about any issues you face while using
+the theme.
+
+--------------------------------------------------------------------->
+
+
+
+<html>  
+        
+    <head>
+        <title>{Title}{block:PostSummary}: {PostSummary}{/block:PostSummary}</title>
+        {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+        <link rel="shortcut icon" href="{Favicon}" />
+        
+        <!--images-->
+        <meta name = "image:Header" content = "">
+        <meta name = "image:Sidebar" content = "">
+        
+        <!--colors-->
+        <meta name = "color:Background" content = "#ffffff">
+        <meta name = "color:Accent" content = "#d3f9ff">
+        <meta name = "color:Hover" content = "#ffffff">
+        <meta name = "color:Nav Link Text" content = "#ffffff">
+        <meta name = "color:Text" content = "#bebebe">
+        <meta name = "color:Link" content = "#a4e3ff">
+        <meta name = "color:Link Hover" content = "#91ceea">
+        
+        <!--text and links-->
+        <meta name = "text:Title Font Size" content = "18">
+        <meta name = "text:Content Font Size" content = "12">
+        <meta name = "text:NavLink1URL" content = "">
+        <meta name = "text:NavLink1" content = "">
+        <meta name = "text:NavLink2URL" content = "">
+        <meta name = "text:NavLink2" content = "">
+        <meta name = "text:SideLink1URL" content = "">
+        <meta name = "text:SideLink1" content = "">
+        <meta name = "text:SideLink2URL" content = "">
+        <meta name = "text:SideLink2" content = "">
+        <meta name = "text:SideLink3URL" content = "">
+        <meta name = "text:SideLink3" content = "">
+        <meta name = "text:SideLink4URL" content = "">
+        <meta name = "text:SideLink4" content = "">
+        <meta name = "text:FacebookURL" content = "">
+        <meta name = "text:InstagramURL" content = "">
+        <meta name = "text:TwitterURL" content = "">
+        <meta name = "text:YoutubeURL" content = "">
+        
+        <!--ifs-->
+        <meta name = "if:Show Nav Link 1" content=""/>
+        <meta name = "if:Show Nav Link 2" content=""/>
+        <meta name = "if:Show Side Link 1" content = ""/>
+        <meta name = "if:Show Side Link 2" content = ""/>
+        <meta name = "if:Show Side Link 3" content = ""/>
+        <meta name = "if:Show Side Link 4" content = ""/>
+        <meta name = "if:Show Facebook Icon" content = ""/>
+        <meta name = "if:Show Instagram Icon" content = ""/>
+        <meta name = "if:Show Twitter Icon" content = ""/>
+        <meta name = "if:Show Youtube Icon" content = ""/>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Roboto:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+        
+        
+        
+        <style type="text/css">
+        
+            /* general formatting */
+            body {
+                width: 100%;
+                margin: 0;
+                word-wrap: break-word;
+                background-color: {color:Background};
+                font-family: 'Cabin', sans-serif;
+                font-size: {text:Content Font Size}px;
+                letter-spacing: 1px;
+                padding-bottom: 75px;
+            }
+            
+            blockquote {
+                border-left: solid 2px {color:Accent};
+                margin-left: 20px;
+                padding-left: 10px;
+            }
+            
+            h1 {
+                font-size: {text:Content Font Size}px;
+                margin-bottom: -2px;
+            }
+            
+            h2 {
+                font-size: {text:Content Font Size}px;
+                margin-bottom: -2px;
+            }
+            
+            a {
+                text-decoration: none;
+                color: {color:Link};
+                -webkit-transition: all 0.9s ease;
+                -moz-transition: all 0.9s ease;
+                -o-transition: all 0.9s ease;
+            }
+            
+            a:hover {
+                color: {color:Link Hover};
+                -webkit-transition: all 0.9s ease;
+                -moz-transition: all 0.9s ease;
+                -o-transition: all 0.9s ease;
+            }
+            
+            [data-title] {
+                position: relative;
+            }
+            
+            [data-title]:before {
+                width: 18px;
+                height: 6px;
+                left: 50%;
+                margin-top: 0px;
+                top: 60%;
+                opacity: 1;
+                content: '';
+                position: absolute;
+                z-index: 10;
+                box-sizing: border-box;
+                border-left: 8px solid transparent;
+                border-right: 8px solid transparent;
+                border-bottom: 5px solid {color:Accent};
+                transform: translate(-50%, 0);
+                opacity: 0;
+                transition: opacity 0.5s;
+                pointer-events: none;
+            }
+            
+            [data-title]:after {
+                transform: translate(-50%, 0);
+                left: calc(50%);
+                margin-top: 5px;
+                top: 60%;
+                opacity: 1;
+                font-weight: normal;
+                text-shadow: none;
+                background: {color:Accent};
+                border: solid 1px white;
+                border-radius: 4px;
+                color: {color:Nav Link Text};
+                content: attr(data-title);
+                padding: 5px 8px;
+                position: absolute;
+                white-space: normal;
+                width: max-content;
+                max-width: 150px;
+                text-align: center;
+                font-size: {text:Content Font Size}px;
+                height: auto;
+                display: inline-block;
+                opacity: 0;
+                transition: opacity 0.5s;
+                pointer-events: none;
+            }
+            
+            [data-title]:hover:before,
+            [data-title]:hover:after {
+                opacity: 1;
+                pointer-events: auto;
+            }
+            
+            img {
+                border: 0;
+                max-width: 100%;
+            }
+            
+            
+            /* scrollbar */
+            ::-webkit-scrollbar-thumb:vertical {
+                height: 50px;
+                background-color: {color:Link};
+                -moz-border-radius:10px;
+                -webkit-border-radius:10px;
+            }
+            
+            ::-webkit-scrollbar {
+                width: 7px;
+                background: {color:Text};
+                margin-right: 25px;
+                border-width: 0px 2px;
+                border-style: solid;
+                border-color: #fff;
+            }
+            
+            
+            /* header */
+            #header {
+                width: 100%;
+                height: 250px;
+                overflow: hidden;
+            }      
+            
+            #header img {
+                display: inline-block;
+                max-width: 100%;
+                width: 100%;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            
+            
+            /* navbar */
+            #navbar {
+                position: sticky;
+                top: 0px;
+                width: 100%;
+                height: 40px;
+                text-align: center;
+                vertical-align: center;
+                background-color: {color:Accent};
+                font-family: 'Roboto', sans-serif;
+                letter-spacing: 2px;
+                padding: 8px 0px;
+                z-index: 1;
+            }
+            
+            #navbar a {
+                display: inline-block;
+                vertical-align: top;
+                width: 100px;
+                padding: 10px 15px;
+                margin: 0px 5px;
+                overflow: hidden;
+                background-color: {color:Accent};
+                color: {color:Nav Link Text};
+                text-align: center;
+            }
+            
+            #navbar a:hover {
+                background-color: {color:Background};
+                color: {color:Accent};
+            }
+            
+            .links_list {
+                margin: 0px;
+                padding: 0px;
+                width: 100px;
+                display: inline-block;
+            } 
+            
+            .links_head {
+                cursor: pointer;
+                position: relative;
+                margin: 1px;
+                text-align: center;
+            } 
+            
+            .links_body {
+                text-align: left;
+                display:none;
+            } 
+            
+            
+            .theme-body {
+                display: flex;
+                flex-direction: row;
+            }
+            
+            
+            /* sidebar */
+            #sidebar {
+                display: inline-block;
+                width: 200px;
+                height: auto;
+                position: relative;
+                left: 200px;
+                margin-top: 25px;
+                font-family: 'Roboto', sans-serif;
+                letter-spacing: 2px;
+                text-align: center;
+            }
+            
+            .sidebar-block {
+                width: 100%;
+                height: auto;
+                margin-bottom: 5px;
+                padding: 0px;
+            }
+            
+            #sidebar-img {
+                max-width: 100%;
+                height: auto;
+                padding: 5px;
+                outline-style: solid;
+                outline-width: 2px;
+                outline-offset: -2px;
+                outline-color: {color:Accent};
+            }
+            
+            #sidebar-links {
+                width: 100%;
+                text-align: center;
+            }
+            
+            #sidebar-links a {
+                width: 100%;
+                display: inline-block;
+                background-color: {color:Accent};
+                color: {color:Nav Link Text};
+                padding: 10px 0px;
+                margin-bottom: 2px;
+            }
+            
+            #sidebar-links a:hover {
+                background-color: {color:Nav Link Text};
+                color: {color:Accent};
+                outline-style: solid;
+                outline-width: 2px;
+                outline-offset: -2px;
+                outline-color: {color:Accent};
+            }
+            
+            #sidebar-social-media {
+                display: inline-block;
+                width: 100%;
+                text-align: center;
+                outline-style: solid;
+                outline-width: 2px;
+                outline-offset: -2px;
+                outline-color: {color:Accent};
+                padding: 10px 0px;
+            }
+            
+            #sidebar-social-media img {
+                max-width:25px;
+                margin:0px 5px -3px 5px;
+            }
+            
+            #pagination {
+                width: 100%;
+                height: 40px;
+            }
+            
+            #pagination td {
+                width: 50%;
+                background-color: {color:Accent};
+                color: {color:Background};
+                font-weight: bold;
+            }
+            
+            #pagination td a {
+                width: 100%;
+                display: block;
+                color: {color:Nav Link Text};
+                padding: 10px 0px;
+            }
+            
+            #pagination td a:hover {
+                background-color: {color:Nav Link Text};
+                color: {color:Accent};
+            }
+            
+            
+            /* posts */
+            #post-wrap {
+                width: 520px;
+                height: 80%;
+                margin-left: 300px;
+                margin-top: 25px;
+                color: {color:Text};
+            }
+            
+            #posts {
+                background-color:{color:Background};
+                border: solid 1px #f2f2f2;
+                padding: 10px;
+                border-radius: 5px;
+                margin-bottom: 15px;
+            }
+            
+            #posts .caption {
+                padding: 0px 10px;
+            }
+            
+            .title {
+                display: inline-block;
+                font-size: {text:Title Font Size}px;
+                font-weight: bold;
+                font-style: italic;
+                line-height: {text:Title Font Size}px;
+                text-align: justify;
+                color: {color:Accent};
+                padding: 10px 10px;
+            }
+            
+            #posts .text {
+                font-size: {text:Content Font Size}px;
+            }
+            
+            #post-footer {
+                width: 100%;
+                height: auto;
+                padding: 10px 0px 15px 0px;
+                border-top: solid 1px #f2f2f2;
+            }
+            
+            #posts #tags {
+                display: inline-block;
+                max-width: 95%;
+                max-height: 16px;
+                float: left;
+                overflow: hidden;
+            }
+            
+            #posts #permalink {
+                display: inline-block;
+                font-size: 20px;
+                float: right;
+                margin-top: -5px;
+            }
+            
+            #post-details {
+                display: block;
+                width: 520px;
+                text-align: center;
+                font-style: italic;
+                color: {color:Link};
+            }
+            
+            #post-actions {
+                display: block;
+                width: 520px;
+                text-align: center;
+            }
+            
+            #post-actions a {
+                display: inline-block;
+                position: relative;
+                width: 100px;
+                padding: 5px 0px;
+                margin-top: 10px;
+                margin-right: 5px;
+                background-color: {color:Accent};
+                color: {color:Background};
+                vertical-align: center;
+            }
+            
+            #post-actions a:hover {
+                background-color: {color:Background};
+                color: {color:Accent};
+                outline-style: solid;
+                outline-width: 2px;
+                outline-offset: -2px;
+                outline-color: {color:Accent};
+            }
+            
+            .like-b .like_button iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                z-index: 2;
+                opacity: 0;
+            }
+            
+            .like-b .liked + .b {
+                color: inherit;
+            }
+            
+            .like-b .liked + .b:after {
+                content: 'd';
+            }
+            
+            #note-container {
+                width: 520px;
+                max-height: 300px;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                background-color:{color:Background};
+                margin-top: 25px;
+                line-height: 18px;
+            }
+            
+            #note-container ol {
+                list-style-type: none;
+                padding: 0px;
+            }
+            
+            #note-container ol img {
+                width: {text:Content Font Size}px;
+                height: {text:Content Font Size}px;
+                padding-right: 3px;
+                border-radius: 100%;
+            }
+            
+            /* post types */
+            #music-info {
+                width: 500px;
+            }
+            
+            #music-info table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            
+            #music-info td {
+                border: solid 2px {color:Accent};
+            }
+            
+            #music-info #album-image {
+                padding: 10px;
+                background-color: {color:Accent};
+            }
+            
+            #music-info .album-info {
+                background-color: white;
+                padding: 0px 0px 0px 15px;
+            }
+            
+            #audio-player {
+                position: absolute;
+                width: 83px;
+                overflow: hidden;
+                margin: 11px 0px 0px 11px;
+                background-color: #f2f2f2;
+                opacity: 0.75;
+                padding: 35px 9px;
+            }
+            
+            #link-post a {
+                display: block;
+                width: 496px;
+                border: 2px solid {color:Accent};
+                border-radius: 4px;
+                padding: 10px 0px;
+                text-align: center;
+            }
+            
+            #link-post a:hover {
+                background-color: {color:Accent};
+                color: {color:Nav Link Text};
+            }
+            
+            #link-post:hover .title {
+                color: {color:Nav Link Text};
+            }
+            
+            .chat-lines {
+                margin-bottom: 15px;
+                padding: 0px 10px;
+            }
+            
+            .chat-lines:last-child {
+                margin-bottom: 0px;
+            }
+            
+            
+            /* pop-up ask box [some code from painthemes] */
+            .popup_block{
+                width: 500px;
+                padding: 10px;
+                display:none;
+                background: #fff;
+                border: 2px solid {color:Accent};
+                border-radius: 4px;
+                float: left;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                z-index: 99999;
+                text-align: center;
+            }
+             
+            #fade {
+                display: none;
+                position: fixed;
+                left: 0px;
+                top: 0px;
+                width: 100%;
+                height: 100%;
+                z-index: 9999;
+                background: {color:Background};
+                opacity: .7;
+            }
+            
+            *html #fade {
+                position: absolute;
+            }
+            
+            *html .popup_block {
+                position: absolute;
+            }
+            
+            #link-to-asks a {
+                display: inline-block;
+                width: 100%;
+                padding: 10px 0px;
+                background-color: {color:Accent};
+                color: {color:Background};
+                margin-top: 10px;
+                text-align: center;
+            }
+            
+            #link-to-asks a:hover {
+                background-color: {color:Background};
+                color: {color:Accent};
+                outline-style: solid;
+                outline-width: 2px;
+                outline-offset: -2px;
+                outline-color: {color:Accent};
+            }
+            
+            
+            /* box */
+            #box {
+                position: fixed;
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                right: 30px;
+                bottom: 20px;
+                border-radius: 100%;
+                text-align: center;
+                background-color: {color:Accent};
+                font-family: 'Dancing Script', cursive;
+            }
+            
+            #box a {
+                display: inline-block;
+                width: 28px;
+                height: 28px;
+                margin-top: 4px;
+                border-radius: 100%;
+                border: solid 2px white;
+                text-align: center;
+                line-height: 21px;
+                font-size: 25px;
+                background-color: {color:Accent};
+                color: {color:Nav Link Text};
+                font-family: 'Dancing Script', cursive;
+            }
+            
+            
+        </style>
+        
+        
+        <script type="text/javascript" src="https://secure.static.tumblr.com/8oupd2j/BYTm7u5cn/tag_search.js"></script>
+        
+        <script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function() {
+        //
+        $('a.poplight[href^=#]').click(function() {
+        var popID = $(this).attr('rel'); //Get Popup Name
+        var popURL = $(this).attr('href'); //Get Popup href to define size
+        var query= popURL.split('?');
+        var dim= query[1].split('&');
+        var popWidth = dim[0].split('=')[1]; //Gets the first query string value
+        $('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"></a>');
+        var popMargTop = ($('#' + popID).height() + 80) / 2;
+        var popMargLeft = ($('#' + popID).width() + 80) / 2;
+        //Apply Margin to Popup
+        $('#' + popID).css({
+        'margin-top' : -popMargTop,
+        'margin-left' : -popMargLeft
+        });
+        $('body').append('<div id="fade"></div>');
+        $('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'})
+        return false;
+        });
+        $('a.close, #fade').live('click', function() {
+        $('#fade , .popup_block').fadeOut(function() {
+        $('#fade, a.close').remove(); //fade them both out
+        });
+        return false;
+        });
+        });
+        </script>
+        
+        <script type="text/javascript" src="https://static.tumblr.com/3ikgvxs/0TGl4zgpu/jquery.min.js"></script> 
+        <script type="text/javascript"> 
+        $(document).ready(function(){ 
+        $(".links_body").hide(); 
+        $(".links_head").click(function(){ 
+        $(this).next(".links_body").slideToggle('fast'); 
+        }); }); </script> 
+        
+    </head>
+    
+    
+    
+    <body>
+        <!--header start-->
+        <div id = "header">
+            <img src = "{image:Header}" />
+        </div>
+        <!--header end-->
+        
+        
+        <!--navbar start-->
+        <div id = "navbar">
+                <a href = "/">Home</a>
+                <a href = "#?w=auto" rel = "box1" class = "poplight">Message</a>
+                <a href = "/archive">Past</a>
+                {block:ifshownavlink1}<a href = "{text:NavLink1URL}">{text:NavLink1}</a>{/block:ifshownavlink1}
+                {block:ifshownavlink2}<a href = "{text:NavLink2URL}">{text:NavLink2}</a>{/block:ifshownavlink2}
+                    
+                <div class = "links_list"> 
+                    <a class = "links_head">v</a> 
+                    <div class = "links_body">  
+                        {block:ifshowsidelink1}<a href = "{text:SideLink1URL}">{text:SideLink1}</a>{/block:ifshowsidelink1}
+                        {block:ifshowsidelink2}<a href = "{text:SideLink2URL}">{text:SideLink2}</a>{/block:ifshowsidelink2}
+                        {block:ifshowsidelink3}<a href = "{text:SideLink3URL}">{text:SideLink3}</a>{/block:ifshowsidelink3}
+                        {block:ifshowsidelink4}<a href = "{text:SideLink4URL}">{text:SideLink4}</a>{/block:ifshowsidelink4}
+                    </div>
+                </div>
+        </div>
+        <!--navbar end-->
+        
+        
+        <div class = "theme-body">
+        <!--sidebar start-->
+        <div id = "sidebar">
+            <div class = "sidebar-block">
+                <div id = "sidebar-img">
+                <a href = "/"><img src = "{image:Sidebar}"></a>
+                </div>
+            </div>
+            
+            <div class = "sidebar-block">
+                <div id = "sidebar-links">
+                    {block:ifshowsidelink1}<a href = "{text:SideLink1URL}">{text:SideLink1}</a>{/block:ifshowsidelink1}
+                    {block:ifshowsidelink2}<a href = "{text:SideLink2URL}">{text:SideLink2}</a>{/block:ifshowsidelink2}
+                    {block:ifshowsidelink3}<a href = "{text:SideLink3URL}">{text:SideLink3}</a>{/block:ifshowsidelink3}
+                    {block:ifshowsidelink4}<a href = "{text:SideLink4URL}">{text:SideLink4}</a>{/block:ifshowsidelink4}
+                </div>
+            </div>
+            
+            <div class = "sidebar-block">
+                <div id = "sidebar-social-media">
+                    {block:ifshowfacebookicon}<a href = "{text:FacebookURL}" target = "_BLANK" data-title = "Facebook"><img src = "https://i.imgur.com/Z2eT5n3.png"/></a>{/block:ifshowfacebookicon}
+                    {block:ifshowinstagramicon}<a href = "{text:InstagramURL}" target = "_BLANK" data-title = "Instagram"><img src = "https://i.imgur.com/c9NEtiK.png"/></a>{/block:ifshowinstagramicon}
+                    {block:ifshowtwittericon}<a href = "{text:TwitterURL}" target = "_BLANK" data-title = "Twitter"><img src = "https://i.imgur.com/vLSFVfU.png"/></a>{/block:ifshowtwittericon}
+                    {block:ifshowyoutubeicon}<a href = "{text:YoutubeURL}" target "_BLANK" data-title = "Youtube"><img src = "https://i.imgur.com/UjwezYo.png"/></a>{/block:ifshowyoutubeicon}
+                </div>
+            </div>
+            
+            <div class = "sidebar-block">
+                <table id = "pagination" cellspacing = "0px" cellpadding = "2px">
+                    <tr>
+                        <td>{block:PreviousPage}<a href = "{PreviousPage}"><< </a>{/block:PreviousPage}</td>
+                        <td>{block:NextPage}<a href = "{NextPage}">  >></a>{/block:NextPage}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!--sidebar end-->
+        
+        
+        <!--posts start-->
+        <div id="post-wrap">
+            {block:Posts}
+            <div id = "posts">
+                {block:Photo}
+                {LinkOpenTag}<img src = "{PhotoURL-500}" />{LinkCloseTag}
+                {block:Caption}<div class = "caption">{Caption}</div>{/block:Caption}
+                {/block:Photo}
+                
+                {block:Photoset}
+                {Photoset-500}
+                {block:Caption}<div class = "caption">{Caption}</div>{/block:Caption}
+                {/block:Photoset}
+                
+                {block:Video}
+                {Video-500}
+                {block:Caption}<div class = "caption">{Caption}</div>{/block:Caption}
+                {/block:Video}
+                
+                {block:Audio}
+                {block:AudioEmbed}{AudioEmbed-500}{/block:AudioEmbed}
+                {block:AudioPlayer}
+                <div id = "music-info">
+                    <table>
+                        <tr>
+                            {block:AlbumArt}<td id = "album-image" width = "100px" rowspan = "3"><img src = "{AlbumArtURL}"/></td>{/block:AlbumArt}
+                            <div id = "audio-player">{AudioPlayer}</div>
+                            <td class = "album-info">Artist: {block:Artist}{Artist}</br>{/block:Artist}</td>
+                        </tr>
+                        <tr><td class = "album-info">Album: {block:Album}{Album}</br>{/block:Album}</td></tr>
+                        <tr><td class = "album-info">Track Name: {block:TrackName}{TrackName}</br>{/block:TrackName}</td></tr>
+                    </table>
+                </div>
+                {/block:AudioPlayer}
+                {block:Caption}<div class = "caption">{Caption}</div>{/block:Caption}
+                {/block:Audio}
+                
+                {block:Quote}
+                <div class = "title">“{Quote}”</div>
+                {block:Source}<div class = "caption">{Source}</div>{/block:Source}
+                {/block:Quote}
+                
+                {block:Text}
+                {block:Title}<div class = "title">{Title}<br /></div>{/block:Title}
+                <div class = "caption">{Body}</div>
+                {/block:Text}
+                
+                {block:Answer}
+                <div class = "title">{Asker}: {Question}</div>
+                <div class = "caption">{Answer}</div>
+                {/block:Answer}
+                
+                {block:Chat}
+                {block:Title}<div class = "title">{Title}</br></div>{/block:Title}
+                {block:Lines}
+                <div class = "chat-lines">
+                {block:Label}<strong>{Label}</strong>{/block:Label} {Line}<br  />
+                </div>
+                {/block:Lines}
+                {/block:Chat}
+                
+                {block:Link}
+                <div id = "link-post"><a href = "{URL}" target = "_BLANK"><div class = "title">{Name}</div></a></div>
+                {block:Description}<div class = "caption">{Description}</div>{/block:Description}
+                {/block:Link}
+                
+                
+                <div id = "post-footer">
+                {block:IndexPage}
+                    {block:HasTags}<div id = "tags">{block:Tags}<a href = "{TagURL}">#{Tag}</a>{/block:Tags}</div>{/block:HasTags}
+                    <div id = "permalink"><a href = "{Permalink}" data-title = "{NoteCountWithLabel}">♡</a></div>
+                {/block:IndexPage}
+                
+                {block:PermalinkPage}
+                    {block:HasTags}<div id = "tags">{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}</div>{/block:HasTags}
+                    {block:RebloggedFrom}<div id = "permalink"><a href = "{ReblogRootURL}" data-title = "Posted by {ReblogRootName}" target = "_BLANK">♡</a></div>{/block:RebloggedFrom}
+                    {block:NotReblog}<div id = "permalink"><a>♡</a></div>{/block:NotReblog}
+                {/block:PermalinkPage}
+                </div>
+                
+            </div>
+            
+            {block:PermalinkPage}
+            {block:Date}<div id = "post-details">Posted on {DayOfWeek} {DayOfMonthWithZero} {ShortMonth} {Year}, {12HourWithZero}{CapitalAmPm}</div>{/block:Date}
+            <div id = "post-actions">
+                <a href = "{ReblogURL}" target = "_blank" >reblog</a>
+                <a class = "like-b" href="#">{LikeButton}<span class = "b">like</span></a>
+            </div>
+            {/block:PermalinkPage}
+            
+            {/block:Posts}
+            
+            {block:PostNotes}
+            <div id = "note-container">{PostNotes}</div>
+            {/block:PostNotes}
+        </div>
+        <!--posts end-->
+        
+        
+        <!--etc-->
+        <div id = "box">
+            <a href = "https://resourcestbh.tumblr.com">r</a>
+        </div>
+        
+        </div>
+        
+    </body>
+    
+    
+    <!--pop-up ask box start-->
+    <div id = "box1" class = "popup_block">
+        <div id = "faq">
+            <div class = "title">feel free to ask me anything :)</div><br>
+        </div>
+        <div id="ask">
+            <iframe src = "https://www.tumblr.com/ask_form/boutsofanxiety.tumblr.com" id = "ask_form" frameborder = "0" height = "250" scrolling = "yes" width = "100%"></iframe>
+        </div>
+        <div id = "link-to-asks">
+            <a href = "/tagged/asks">answered asks</a>
+        </div>
+    </div>
+    <!--pop-up ask box end-->
+</html>
