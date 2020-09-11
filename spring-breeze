@@ -1,0 +1,354 @@
+<DOCTYPE html!>
+<html>
+    <head>
+        <title>{Title}{block:PostSummary}: {PostSummary}{/block:PostSummary}</title>
+        {block:Description}<meta name = "description" content = "{MetaDescription}" />{/block:Description}
+        <link rel = "shortcut icon" href = "{Favicon}" />
+        
+        <!--images-->
+        <meta name = "image:Sidebar" />
+        
+        <!--colors-->
+        <meta name = "color:Accent" content = "#d4ecff" />
+        <meta name = "color:Accent Hover" content = "#b3d9f6" />
+        <meta name = "color:Sidebar Title Color" content = "#fff" />
+        <meta name = "color:Box Link Text" content = "#fff" />
+        
+        
+        <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+        
+        
+        
+        <style type = "text/css">
+        
+            body {
+                font-size: 10px;
+                font-family: Helvetica;
+                color: #606060;
+                letter-spacing: 1px;
+            }
+            
+            a {
+                text-decoration: none;
+                color: {color:Accent};
+                -moz-transition-duration: 1s;
+                -o-transition-duration: 1s;
+                -webkit-transition-duration: 1s;
+                transition-duration: 1s;
+            }
+            
+            a:hover {
+                color: {color:Accent Hover};
+                -moz-transition-duration: 1s;
+                -o-transition-duration: 1s;
+                -webkit-transition-duration: 1s;
+                transition-duration: 1s;
+            }
+            
+            blockquote {
+                border-left: 1px solid {color:Accent};
+                padding-left: 10px;
+                margin-left: 15px;
+            }
+            
+            /* sidebar */
+            #sidebar-area {
+                display: inline-block;
+                position: fixed;
+                width: 250px;
+                height: 100%;
+                top: 0px;
+                left: 0px;
+                background-image: url({image:Sidebar});
+                background-size: auto 100%;
+                background-position: center center;
+                text-align: center;
+                /*outline: solid 1px black;*/
+            }
+            
+            #sidebar-area-img {
+                /*max-width: auto;*/
+                height: 100%;
+                /*margin: auto;*/
+                /*display: block;*/
+                /*margin-left: ;*/
+                /*transform: translateX(50%);*/
+            }
+            
+            #sidebar-info {
+                display: block;
+                position: absolute;
+                width: 100%;
+                top: 25%;
+                left: 0px;
+                font-family: 'PT Sans', sans-serif;
+                text-transform: lowercase;
+            }
+            
+            .sidebar-title {
+                display: block;
+                width: 100%;
+                font-size: 18px;
+                padding: 10px 0px;
+                font-weight: bold;
+                color: {color:Sidebar Title Color};
+                /*color: {color:Accent};*/
+                /*color: black;*/
+                letter-spacing: 2px;
+                /*text-shadow: 1px 1px black;*/
+            }
+            
+            .box-link {
+                display: block;
+                width: 200px;
+                margin-left: 25px;
+                margin-bottom: 5px;
+                padding: 5px 0px;
+                letter-spacing: 5px;
+                outline: solid 2px {color:Accent};
+                color: {color:Accent};
+                background-color: {color:Box Link Text};
+                font-weight: bold;
+                -moz-transition-duration: 1s;
+                -o-transition-duration: 1s;
+                -webkit-transition-duration: 1s;
+                transition-duration: 1s;
+            }
+            
+            .box-link:hover {
+                letter-spacing: 10px;
+                background-color: {color:Accent Hover};
+                color: {color:Accent};
+                background-color: {color:Box Link Text};
+                -moz-transition-duration: 1s;
+                -o-transition-duration: 1s;
+                -webkit-transition-duration: 1s;
+                transition-duration: 1s;
+            }
+            
+            #post-wrap {
+                /*display: block;*/
+                position: absolute;
+                /*width: 500px;*/
+                top: 30px;
+                left: 450px;
+                padding: 10px 10px;
+                /*outline: 1px solid black;*/
+            }
+            
+            .post {
+                /*display: block;*/
+                width: 500px;
+                /*outline: 1px solid black;*/
+                padding: 10px 10px;
+                margin-bottom: 100px;
+            }
+            
+            .post-title {
+                color: {color:Accent};
+                font-size: 16px;
+                line-height: 18px;
+            }
+            
+            .post-header {
+                display: flex;
+                align-items: flex-start;
+                width: 100%;
+                height: 14px;
+                margin-bottom: 10px;
+                text-align: center;
+                font-family: 'PT Sans', sans-serif;
+                font-weight: bold;
+                color: {color:Accent};
+            }
+            
+            .line {
+                /*display: inline-block;*/
+                flex-basis: auto;
+                /*width: 430px;*/
+                width: 100%;
+                height: 7px;    
+                margin: 0px 8px 0px 8px;
+                border-bottom: 1px solid {color:Accent};
+            }
+            
+            .post-date {
+                flex-basis: 65px;
+                text-transform: lowercase;
+                text-align: justify;
+            }
+            
+            .post-actions {
+                display: flex;
+                align-items: flex-start;
+                flex-basis: 30px;
+                text-align: right;
+                font-size: 16px;
+                margin-top: -6px;
+                float: right;
+                letter-spacing: 2px;
+            }
+            
+            .reblog {
+                position: relative;
+                display: inline-block;
+                /*top: -6px;*/
+            }
+            
+            .tags {
+                display: inline-block;
+                /*font-size: 16px;*/
+            }
+            
+            .tags-box {
+                display: inline-block;
+                width: 10px;
+            }
+            
+            .post-tags {
+                display: block;
+                /*position: relative;*/
+                height: 0px;
+                width: 100px;
+                margin-left: 20px;
+                /*top: 0px;*/
+                margin-top: -16px;
+                font-size: 10px;
+                text-align: left;
+                color: {color:Accent};
+                opacity: 0;
+                -moz-transition-duration: 1s;
+                -o-transition-duration: 1s;
+                -webkit-transition-duration: 1s;
+                transition-duration: 1s;
+            }
+            
+            .tags-box:hover .post-tags {
+                margin-left: 30px;
+                opacity: 1;
+                -moz-transition-duration: 1s;
+                -o-transition-duration: 1s;
+                -webkit-transition-duration: 1s;
+                transition-duration: 1s;
+            }
+            
+            .post-footer {
+                width: 100%;
+                border-top: 1px solid {color:Accent};
+                padding-top: 5px;
+                margin-top: 15px;
+                font-family: 'PT Sans', sans-serif;
+                font-weight: bold;
+            }
+            
+            .post-note-count {
+                float: right;
+            }
+            
+            
+            
+        </style>
+        
+        
+        <script type = "text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
+        
+        </script>
+        
+    </head>
+    
+    
+    <body>
+    
+        <!--sidebar start-->
+        <div id = "sidebar-area">
+            <!--<img id = "sidebar-area-img" src = "{image:Sidebar}" />-->
+            
+            <div id = "sidebar-info">
+                <span class = "sidebar-title">{Title}</span>
+                <a class = "box-link" href = "/">home</a>
+                <a class = "box-link" href = "/ask">ask</a>
+                <a class = "box-link" href = "/archive">past</a>
+                <!--dropdown here -->
+            </div>    
+        </div>
+        <!--sidebar end-->
+        
+        
+        <!--posts start-->
+        <div id = "post-wrap">
+            {block:Posts}
+            <div class = "post" id = "{PostID}">
+                <div class = "post-header">
+                    {block:Date}<div class = "post-date">{DayOfMonthWithZero} {ShortMonth} {ShortYear}</div>{/block:Date}
+                    <div class = "line"> </div>
+                    <div class = "post-actions"><a class = "reblog" href = "{ReblogURL}">↻</a><div class = "tags-box"><a class = "tags" href = "{Permalink}">#</a>
+         <div class = "post-tags">{block:HasTags}Tags:</br>{block:Tags}<a href = "{TagURL}" target = "_BLANK">#{Tag}</a></br>{/block:Tags}{/block:HasTags}</div>
+                    </div></div>
+                </div>
+                
+                
+                {block:Text}
+                    {block:Title}<div class = "post-title">{Title}</div>{/block:Title}
+                    {Body}
+                {/block:Text}
+                
+                {block:Photo}
+                    {LinkOpenTag}<img src = "{PhotoURL-500}" />{LinkCloseTag}
+                    {block:Caption}<div class = "caption">{Caption}</div>{/block:Caption}
+                {/block:Photo}
+                
+                {block:Photoset}
+                    {Photoset-500}
+                    {block:Caption}<div class = "post-caption">{Caption}</div>{/block:Caption}
+                {/block:Photoset}
+                
+                {block:Quote}
+                    <div class = "post-title">"{Quote}"</div>
+                    {block:Source}– <div class = "post-caption">{Source}</div>{/block:Source}
+                {/block:Quote}
+                
+                {block:Link}
+                    <div class = "link-post">
+                        <a href = "{URL}"><span class = "post-title" target = {Target}>{Name}</span></a>        
+                    </div>
+                    {block:Description}<div class = "post-caption">{Description}</div>{/block:Description}
+                {/block:Link}
+                
+                {block:Chat}
+                    {block:Title}<div class = "post-title">{Title}</div>{/block:Title}
+                    {block:Lines}
+                        {block:Label}{Label}: {/block:Label}{Line}</br>
+                    {/block:Lines}
+                {/block:Chat}
+                
+                {block:Audio}
+                    {block:AudioEmbed}{AudioEmbed-500}{/block:AudioEmbed}
+                    {block:AudioPlayer}{AudioPlayer}{/block:AudioPlayer}
+                    {block:Artist}Artist: {Artist}</br>{/block:Artist}
+                    {block:Album}Album: {Album}</br>{/block:Album}
+                    {block:TrackName}Track Name: {TrackName}{/block:TrackName}
+                    {block:Caption}<div class = "post-caption">{Caption}</div>{/block:Caption}
+                {/block:Audio}
+                
+                {block:Video}
+                    {Video-500}
+                    {block:Caption}<div class = "post-caption">{Caption}</div>{/block:Caption}
+                {/block:Video}
+                
+                {block:Answer}
+                    <div class = "post-title">{Asker}: {Question}</div>
+                    <div class = "post-caption">{Answer}</div>
+                {/block:Answer}
+                
+                <div class = "post-footer">
+                    {block:RebloggedFrom}<a href = "{ReblogParentURL}" target = "_BLANK">via</a>  <a href = "{ReblogRootURL}" target = "_BLANK">src</a>{/block:RebloggedFrom}
+                    {block:NotReblog}<a href = "{BlogURL}" target = "_BLANK">via</a>  <a href = "{BlogURL}" target = "_BLANK">src</a>{/block:NotReblog}
+                    <a class = "post-note-count" href = "{Permalink}">{NoteCountWithLabel}</a>
+                </div>
+            </div>
+            {/block:Posts}
+        </div>
+        <!--posts end-->
+        
+    </body>
+</html>
